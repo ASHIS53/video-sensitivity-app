@@ -17,7 +17,8 @@ export default function Player() {
       return;
     }
 
-    videoRef.current.src = `http://localhost:5000/api/videos/public-stream/${id}?token=${token}`;
+    videoRef.current.src = `https://video-sensitivity-app-xf5j.onrender.com/api/videos/public-stream/${id}?token=${token}`;
+
     videoRef.current.load();
   }, [id]);
 

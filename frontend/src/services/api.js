@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://video-sensitivity-app-xf5j.onrender.com/api",
 });
 
 // Request interceptor - add token

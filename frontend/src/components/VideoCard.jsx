@@ -23,7 +23,8 @@ export default function VideoCard({ video, progress, status }) {
       return;
     }
 
-    videoEl.src = `http://localhost:5000/api/videos/public-stream/${video._id}?token=${token}`;
+    videoEl.src = `https://video-sensitivity-app-xf5j.onrender.com/api/videos/public-stream/${video._id}?token=${token}`;
+
     videoEl.load();
 
     const handleError = () => {
@@ -60,12 +61,15 @@ export default function VideoCard({ video, progress, status }) {
     if (!confirm("Delete this video permanently?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/videos/${video._id}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      await fetch(
+        `https://video-sensitivity-app-xf5j.onrender.com/api/videos/${video._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       window.location.reload();
     } catch (err) {
       alert("Delete failed");

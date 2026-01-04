@@ -48,7 +48,7 @@ export default function Dashboard() {
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user") || "{}");
 
-    socketRef.current = io("http://localhost:5000", {
+    socketRef.current = io("https://video-sensitivity-app-xf5j.onrender.com", {
       query: { userId: userData.id },
     });
 
