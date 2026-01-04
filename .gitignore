@@ -27,3 +27,10 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+backend/src/uploads/
+backend/src/temp/
+*.mp4
+*.png
+*.jpg
+
